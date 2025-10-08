@@ -19,7 +19,6 @@
     "lint": "pnpm -r lint",
     "format": "pnpm -r format",
     "format:check": "pnpm -r format:check",
-    "prepare": "husky install",
     "clean": "pnpm -r clean"
   },
   "lint-staged": {
