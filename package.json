@@ -1,0 +1,49 @@
+{
+  "name": "grcense",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm -r --parallel --filter @grcense/web --filter @grcense/api dev",
+    "dev:web": "pnpm --filter @grcense/web dev",
+    "dev:api": "pnpm --filter @grcense/api dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "format": "pnpm -r format",
+    "format:check": "pnpm -r format:check",
+    "prepare": "husky install",
+    "clean": "pnpm -r clean"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,cjs,mjs}": [
+      "pnpm exec eslint --fix"
+    ],
+    "*.{json,md,css,scss,ts,tsx,js,jsx}": [
+      "pnpm exec prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.2.1",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "lint-staged": "^15.2.2",
+    "pnpm": "9.0.0",
+    "prettier": "^3.3.2",
+    "typescript": "^5.4.5"
+  }
+}
